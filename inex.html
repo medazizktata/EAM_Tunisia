@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EAM Tunisia</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Montserrat", sans-serif;
+    }
+    a {
+      text-decoration: none;
+    }
+    a:active {
+      color: black;
+    }
+
+    a:visited {
+      color: black;
+    }
+
+    ul {
+      list-style: none;
+    }
+    li {
+      display: inline-block;
+    }
+    .Navbar {
+      display: flex;
+      background-color: white;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 4Opx;
+      width: 100%;
+      position: fixed;
+      z-index: 9999;
+    }
+    .Navbar ul li a {
+      position: relative;
+      color: #1aacbb;
+    }
+    .Navbar ul li a:hover {
+      color: #aad255;
+    }
+    .Navbar ul li a::before {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #aad255;
+
+      transition: width 0.3s ease-in-out;
+    }
+
+    .Navbar ul li a:hover::before {
+      width: 100%;
+    }
+    .logo {
+      padding-left: 40px;
+      transform: scale(0.95);
+      transition: transform 0.2s ease-out;
+    }
+    .logo:hover {
+      transform: scale(1);
+      cursor: pointer;
+    }
+
+    .menu {
+      font-size: medium;
+      font-weight: bold;
+      display: flex;
+      column-gap: 20px;
+      padding: 50px;
+      align-items: center;
+      color: grey;
+    }
+    .ilink {
+      transition: transform 0.2s ease-out;
+    }
+    .ilink:hover {
+      transform: scale(1.05);
+    }
+    h1 {
+      color: #aad255;
+      font-weight: bolder;
+      font-size: 85px;
+      margin: 0px 0px 30px 0px;
+      padding-left: 35px;
+    }
+    .EAM {
+      font-size: 77px;
+    }
+    span {
+      display: block;
+      font-size: medium;
+      padding: 10px;
+    }
+    .container {
+      position: relative;
+    }
+    .container img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    .textbox {
+      position: absolute;
+      top: 4%;
+      left: -1000px;
+      background-color: rgba(255, 255, 255, 0.3);
+      padding: 100px 300px 100px 100px;
+      animation: slide-in 1s forwards;
+      animation-delay: 1s;
+    }
+    .actualtext {
+      opacity: 0;
+      animation: fade-in 0.8s ease-in-out forwards 0.8s;
+      animation-delay: 1.2s;
+    }
+    @keyframes slide-in {
+      0% {
+        left: -1000px;
+      }
+      100% {
+        left: 150px;
+      }
+    }
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .services {
+      padding: 50px;
+    }
+    h2 {
+      color: #aad255;
+      text-align: center;
+      font-size: 50px;
+      font-weight: medium;
+      margin-bottom: 20px;
+    }
+    h3 {
+      color: black;
+      text-align: center;
+      font-size: small;
+      margin-bottom: 0px;
+      font-size: 15px;
+    }
+    .slideshow {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 30px;
+      align-items: center;
+      padding: 50px 50px 0px 50px;
+      margin-left: 60px;
+    }
+
+    .placeholder {
+      width: 30%;
+      height: 500px;
+      height: auto;
+      transform: scale(0.95);
+      transition: transform 0.2s ease-out;
+    }
+    .placeholder:hover {
+      transform: scale(1);
+      cursor: pointer;
+    }
+    .placeholder img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .description {
+      width: 100%;
+      color: white;
+      height: 150px;
+      text-align: center;
+      padding-top: 30px;
+    }
+    .black {
+      background-color: black;
+    }
+    .green {
+      background-color: #aad255;
+    }
+    span {
+      font-weight: medium;
+    }
+    form {
+      display: flex;
+      border: none;
+      outline: none;
+      flex-direction: column;
+      padding: 0px 350px;
+    }
+
+    form label {
+      display: block;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 10px 0px 5px 0px;
+      width: 100%;
+    }
+    form button {
+      background: black;
+      color: white;
+      padding: 10px 30px;
+      font-size: medium;
+      font-weight: bold;
+      border: none;
+      margin-top: 15px;
+      display: block;
+      margin-bottom: 100px;
+    }
+    @keyframes wiggle {
+      0% {
+        transform: rotate(0deg);
+      }
+      25% {
+        transform: rotate(-2deg);
+      }
+      75% {
+        transform: rotate(2deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+    form button:hover {
+      cursor: pointer;
+      animation: wiggle 0.5s ease-in-out 2;
+    }
+    form input {
+      height: 40px;
+      border-top: 1px #aad255;
+      border-left: none;
+      border-right: none;
+      margin-bottom: 10px;
+    }
+    input:focus {
+      border-color: #aad255;
+    }
+    textarea {
+      margin: 5px 0px;
+      resize: none;
+      border-top: 1cm;
+      border-left: none;
+      border-right: none;
+    }
+    .map {
+      position: relative;
+      text-align: center;
+      width: 100%;
+      height: 200px;
+      margin-bottom: 450px;
+    }
+
+    footer span {
+      text-align: center;
+      padding: 0px;
+      margin: 30px 0;
+    }
+    .footer img {
+      display: block;
+      margin: auto;
+    }
+    .footer a:visited {
+      color: black;
+    }
+    .footer a:hover {
+      color: #aad255;
+    }
+  </style>
+  <body>
+    <header>
+      <div class="Navbar">
+        <div class="logo">
+          <a href="">
+            <img src="EAM_Tunisia_logo.jpg" width="90" />
+          </a>
+        </div>
+        <ul class="menu">
+          <li class="ilink"><a href="#">Home</a></li>
+          <li class="ilink"><a href="#">About</a></li>
+          <li class="ilink"><a href="#">Clients</a></li>
+          <li class="ilink"><a href="#">FAQ</a></li>
+          <li class="ilink"><a href="#">Services</a></li>
+          <li class="ilink"><a href="#">Contact</a></li>
+          <li class="ilink"><a href="#">Projects</a></li>
+          <li class="ilink"><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="container">
+      <img src="/images/green_land.jpg" width="100%" />
+      <div class="textbox">
+        <div class="actualtext">
+          <h1 class="EAM">EAM</h1>
+          <h1>Tunisia</h1>
+          <span>
+            <b>Expertise</b> and projects in over <b>16 countries,</b>
+          </span>
+          <span><b> Environmental </b> and <b>Social Assessment </b> </span>
+          <span> <b>Safety</b> and <b>Health Risk Analysis </b> </span>
+          <span> <b>Consent</b> to operate </span>
+        </div>
+      </div>
+      <div class="services">
+        <h2>Our Services</h2>
+        <h3>Discover our Expertise</h3>
+        <div class="slideshow">
+          <div class="placeholder">
+            <img src="/images/social_imapct.jpg" width=" alt="">
+            <div class="description green">
+              <h4>Environmental and Social Impact assessment</h4>
+              <span>Achieve your goals</span>
+            </div>
+          </div>
+          <div class="placeholder">
+            <img src="/images/oil_spill.jpg" alt="" />
+            <div class="description black">
+              <h4>Oil spill Response Plan</h4>
+              <span>Expert Guidance</span>
+            </div>
+          </div>
+          <div class="placeholder">
+            <img src="/images/env_soc_baseline_srvey.jpg" alt="" />
+            <div class="description green">
+              <h4>Environmental and Social Baseline Survey</h4>
+              <span>Grow your Business</span>
+            </div>
+          </div>
+          <div class="placeholder">
+            <img src="/images/envir.jpeg" alt="" />
+            <div class="description black">
+              <h4>Environmental Due Diligence</h4>
+              <span>Achieve your Goals</span>
+            </div>
+          </div>
+          <div class="placeholder">
+            <img src="/images/field.jpeg" alt="" />
+            <div class="description green">
+              <h4>Contaminated Site Management</h4>
+              <span>Expert Guidance</span>
+            </div>
+          </div>
+
+          <div class="placeholder">
+            <img src="/images/health_risk_insurance.jpg" alt="" />
+            <div class="description black">
+              <h4>Health Risk Assessment</h4>
+              <span>Grow your Business</span>
+            </div>
+          </div>
+          <div class="placeholder">
+            <img src="/images/indus_risk.jpg" alt="" />
+            <div class="description green">
+              <h4>Industrial Risk Analysis</h4>
+              <span>Achieve your Goals</span>
+            </div>
+          </div>
+          <div class="placeholder">
+            <img src="/images/consulting.jpg" alt="" />
+            <div class="description black">
+              <h4>Consulting and Training</h4>
+              <span>Expert Guidance</span>
+            </div>
+          </div>
+          <div class="placeholder">
+            <img src="/images/meeting_corp.png" alt="" />
+            <div class="description green">
+              <h4>Preparation of applications for consents</h4>
+              <span>Grow your Business</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="Contact">
+      <h2>Contact Us</h2>
+      <form action="/submit-form" method="POST">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter your Name"
+        />
+        <label for="Email">Email</label>
+        <input
+          type="text"
+          name="email"
+          id="email"
+          placeholder="Enter your Email"
+        />
+        <label for="subject">Subject</label>
+        <input
+          type="text"
+          name="subject"
+          id="subject"
+          placeholder="Type the Subject"
+        />
+        <label for="Message">Message</label>
+        <textarea
+          name="message"
+          id="message"
+          rows="5"
+          placeholder="Type your message here"
+        ></textarea>
+        <button type="submit" class="submit">Submit</button>
+      </form>
+    </div>
+
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12771.208965499656!2d10.198444!3d36.847212!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd34f33eebe2e1%3A0x4c7cc7ec491809f0!2sEAM!5e0!3m2!1sfr!2stn!4v1683755617439!5m2!1sfr!2stn"
+        width="1000"
+        height="600"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    <footer>
+      <div class="footer">
+        <a href="mailto:contact@eamtunisia.com" target="_blank">
+          <span>contact@eamtunisia.com</span>
+        </a>
+        <a href="https://www.facebook.com/juniorenit">
+          <span>©2023 ENIT Junior Entreprise | All Rights Reserved
+          </span>
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>
