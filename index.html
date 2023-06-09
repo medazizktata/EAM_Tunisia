@@ -78,13 +78,13 @@
       animation-duration: 0.3s;
       animation-fill-mode: forwards;
     }
-    
+
     .dropdown:hover .dropdown-menu {
       display: block;
       opacity: 1;
       animation-name: fade-in;
     }
-    
+
     @keyframes fade-in {
       0% {
         opacity: 0;
@@ -96,19 +96,18 @@
         opacity: 0;
       }
     }
-    
+
     .dropdown-menu li {
       display: block;
     }
-    
+
     .dropdown-menu li a {
       padding: 8px 12px;
     }
-    
+
     .dropdown-menu li a:hover {
       background-color: #ddd;
     }
-    
 
     .dropdown:hover .dropdown-menu {
       display: block;
@@ -362,6 +361,62 @@
       margin: 0 150px;
       padding-top: 25px;
     }
+    
+    
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-250px * 7));
+      }
+    }
+    
+    .slider {
+      background: white;
+      height: 100px;
+      margin: auto;
+      overflow: hidden;
+      position: relative;
+      width: 950px;
+    }
+    
+    .slider::before,
+    .slider::after {
+      background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+      content: "";
+      height: 100px;
+      position: absolute;
+      width: 200px;
+      z-index: 2;
+    }
+    
+    .slider::after {
+      right: 0;
+      top: 0;
+      transform: rotateZ(180deg);
+    }
+    
+    .slider::before {
+      left: 0;
+      top: 0;
+    }
+    
+    .slider .slide-track {
+      animation: scroll 40s linear infinite;
+      display: flex;
+      width: calc(250px * 14);
+    }
+    
+    .slider .slide {
+      height: 100px;
+      width: 250px;
+    }
+    .contactus {
+      margin-top: 60px ;
+    }
+    
+    
   </style>
   <body>
     <header>
@@ -377,15 +432,25 @@
           <li class="dropdown">
             <a href="#">Services</a>
             <ul class="dropdown-menu">
-              <li><a href="#">Item 1</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-              <li><a href="#">Item 4</a></li>
-              <li><a href="#">Item 5</a></li>
-              <li><a href="#">Item 6</a></li>
+              <li><a href="#">Service 1</a></li>
+              <li><a href="#">Service 2</a></li>
+              <li><a href="#">Service 3</a></li>
+              <li><a href="#">Service 4</a></li>
+              <li><a href="#">Service 5</a></li>
+              <li><a href="#">Service 6</a></li>
             </ul>
           </li>
-          <li class="ilink"><a href="#">Projects</a></li>
+          <li class="dropdown">
+            <a href="#">Projects</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Project 1</a></li>
+              <li><a href="#">Project 2</a></li>
+              <li><a href="#">Project 3</a></li>
+              <li><a href="#">Project 4</a></li>
+              <li><a href="#">Project 5</a></li>
+              <li><a href="#">Project 6</a></li>
+            </ul>
+          </li>
           <li class="ilink"><a href="#">Clients</a></li>
           <li class="ilink"><a href="#">Contact</a></li>
         </ul>
@@ -477,11 +542,128 @@
     </div>
     <div class="testimonials">
       <h2>Our Clients</h2>
-      <div class="carrousel"></div>
-      <a href="#"><h3>Read more</h3></a>
+      <div class="carrousel">
+        <div class="slider">
+          <div class="slide-track">
+            <div class="slide">
+              <img
+                src="EAM_Tunisia_logo.jpg"
+                height="100"
+                width="100"
+                alt=""
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="EAM_Tunisia_logo.jpg"
+                height="100"
+                width="100"
+                alt=""
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="EAM_Tunisia_logo.jpg"
+                height="100"
+                width="100"
+                alt=""
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="EAM_Tunisia_logo.jpg"
+                height="100"
+                width="100"
+                alt=""
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="EAM_Tunisia_logo.jpg"
+                height="100"
+                width="100"
+                alt=""
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="EAM_Tunisia_logo.jpg"
+                height="100"
+                width="100"
+                alt=""
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="EAM_Tunisia_logo.jpg"
+                height="100"
+                width="100"
+                alt=""
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="EAM_Tunisia_logo.jpg"
+                height="100"
+                width="100"
+                alt=""
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="EAM_Tunisia_logo.jpg"
+                height="100"
+                width="100"
+                alt=""
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="EAM_Tunisia_logo.jpg"
+                height="100"
+                width="100"
+                alt=""
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="EAM_Tunisia_logo.jpg"
+                height="100"
+                width="100"
+                alt=""
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="EAM_Tunisia_logo.jpg"
+                height="100"
+                width="100"
+                alt=""
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="EAM_Tunisia_logo.jpg"
+                height="100"
+                width="100"
+                alt=""
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="EAM_Tunisia_logo.jpg"
+                height="100"
+                width="100"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#"><h3>See our clients testimonies</h3></a>
     </div>
     <div class="Contact">
-      <h2>Contact Us</h2>
+      <h2 class="contactus">Contact Us</h2>
       <form action="/submit-form" method="POST">
         <label for="name">Name</label>
         <input
